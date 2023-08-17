@@ -4,6 +4,62 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Live Inline Form Validation</title>
+    <script src="main.js" defer></script>
   </head>
-  <body></body>
+  <body>
+    <div class="overlay hidden"></div>
+    <div class="main_content">
+      <div class="header">Inline Form Validation Practice</div>
+      <div class="required">All fields are required.</div>
+      <form novalidate>
+        <div>
+          <label for="email">Email</label>
+          <input type="email" name="email" id="email" required />
+          <span class="error" aria-live="polite"></span>
+        </div>
+
+        <div>
+          <label for="country">Country</label>
+          <input type="text" name="country" id="country" required />
+          <span class="error" aria-live="polite"></span>
+        </div>
+
+        <div>
+          <label for="zipcode">Zip Code</label>
+          <input
+            type="text"
+            name="zipcode"
+            id="zipcode"
+            required
+            pattern="^[0-9]{5}(?:-[0-9]{4})?$"
+          />
+          <span class="error" aria-live="polite"></span>
+        </div>
+
+        <div>
+          <label for="password">Password</label>
+          <input
+            type="password"
+            name="password"
+            id="password"
+            required
+            pattern="^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?([^\w\s]|[_])).{8,}$"
+          />
+          <span class="error" aria-live="polite"></span>
+        </div>
+
+        <div>
+          <label for="confirmPass">Confirm Password</label>
+          <input type="password" name="confirmPass" id="confirmPass" required />
+          <span class="error" aria-live="polite"></span>
+        </div>
+
+        <div class="formBtn"><button type="submit">Submit</button></div>
+      </form>
+      <div class="successfulSubmission hidden">
+        <div class="text">Form was successfully submitted!</div>
+        <button type="button">Click to close</button>
+      </div>
+    </div>
+  </body>
 </html>

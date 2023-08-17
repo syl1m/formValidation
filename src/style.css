@@ -1,0 +1,106 @@
+* {
+  padding: 0rem;
+  margin: 0rem;
+  box-sizing: border-box;
+}
+
+.overlay {
+  position: absolute;
+  width: 100vw;
+  height: 100vh;
+  z-index: 2;
+  backdrop-filter: blur(10px);
+}
+
+.header {
+  font-size: 2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem;
+}
+
+.successfulSubmission {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 3;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 1rem;
+  border-radius: 8px;
+  border: solid 1px black;
+  background-color: white;
+}
+
+.successfulSubmission button {
+  width: 7rem;
+  cursor: pointer;
+}
+
+.required {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 1rem;
+}
+
+form {
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+form div {
+  display: grid;
+  grid-template-rows: 1fr 1fr;
+  width: 15rem;
+  gap: 0.2rem;
+  padding: 0.4rem;
+}
+
+form div label {
+  font-weight: bold;
+}
+
+form div input {
+  width: 14.2rem;
+  padding: 0.25rem;
+  border-radius: 8px;
+}
+
+form div span {
+  text-align: center;
+  padding-top: 0.2rem;
+  color: red;
+}
+
+form .formBtn {
+  justify-content: center;
+  align-self: center;
+}
+
+button {
+  width: 5rem;
+  padding: 0.25rem;
+  margin-top: 1rem;
+  cursor: pointer;
+}
+
+input:valid,
+.error {
+  border-color: green;
+}
+
+input:invalid,
+.error.active {
+  border-color: red;
+}
+
+.hidden {
+  display: none;
+}
